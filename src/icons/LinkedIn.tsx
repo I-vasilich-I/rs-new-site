@@ -1,6 +1,4 @@
-import React from 'react';
-
-export const LinkedInIcon: React.FC = () => (
+export const LinkedInIcon = () => (
   <svg width="56" height="57" viewBox="0 0 56 57" fill="none" xmlns="http://www.w3.org/2000/svg">
     <rect y="0.0683594" width="56" height="56" rx="28" fill="#EEEEEE" />
     <path

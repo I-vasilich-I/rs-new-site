@@ -1,6 +1,4 @@
-import React from 'react';
-
-export const AwsLogo: React.FC = () => (
+export const AwsLogo = () => (
   <svg width="75" height="45" viewBox="0 0 75 45" fill="none" xmlns="http://www.w3.org/2000/svg">
     <g clipPath="url(#clip0_20948_268253)">
       <path

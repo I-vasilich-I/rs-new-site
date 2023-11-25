@@ -1,7 +1,3 @@
-import React from 'react';
+const year = new Date().getFullYear();
 
-import './Footer.scss';
-
-export const Footer: React.FC = () => (
-  <footer className="footer">© 2023 The Rolling Scopes</footer>
-);
+export const Footer = () => <footer className="footer">{`© ${year} The Rolling Scopes`}</footer>;

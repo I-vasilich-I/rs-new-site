@@ -1,11 +1,5 @@
-import React from 'react';
-
-import './Subtitle.scss';
-
-interface SubtitleProps {
+type SubtitleProps = {
   text: string;
-}
+};
 
-export const Subtitle: React.FC<SubtitleProps> = ({ text }: SubtitleProps) => (
-  <div className="subtitle">{text}</div>
-);
+export const Subtitle = ({ text }: SubtitleProps) => <div className="subtitle">{text}</div>;

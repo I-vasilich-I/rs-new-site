@@ -1,31 +1,38 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
+import { RsLogo } from 'icons';
+import { useWindowSize } from 'hooks';
 
-import { RsLogo } from '../../icons';
-
-import './Navbar.scss';
-
-interface NavItemProps {
+type NavItemProps = {
   label: string;
   href: string;
   toggleMenu: () => void;
-}
+};
 
-const NavItem: React.FC<NavItemProps> = ({ label, href, toggleMenu }) => {
+type Color = 'gray' | 'none' | 'white';
+
+const NavItem = ({ label, href, toggleMenu }: NavItemProps) => {
+  const { width } = useWindowSize();
+
+  const toggle = () => {
+    if (!width || width > 810) {
+      return;
+    }
+
+    toggleMenu();
+  };
+
   return (
-    <a
-      className="menu-item"
-      href={`#${href}`}
-      onClick={window.innerWidth <= 810 ? toggleMenu : () => {}}>
+    <a className="menu-item" href={`#${href}`} onClick={toggle}>
       <div className="label">{label}</div>
     </a>
   );
 };
 
-export const Navbar: React.FC = () => {
+export const Navbar = () => {
   const [isMenuOpen, setMenuOpen] = useState(false);
-  const [color, setColor] = useState('gray');
+  const [color, setColor] = useState<Color>('gray');
 
-  const listenScrollEvent = (event: any) => {
+  const listenScrollEvent = () => {
     if (window.scrollY <= 64) {
       setColor('gray');
     } else if (window.scrollY > 64 && window.scrollY < 800) {
@@ -43,6 +50,7 @@ export const Navbar: React.FC = () => {
 
   useEffect(() => {
     window.addEventListener('scroll', listenScrollEvent);
+    return () => window.removeEventListener('scroll', listenScrollEvent);
   }, []);
 
   return (

@@ -1,0 +1,22 @@
+import { Title, Subtitle, TitleType } from 'components';
+import image from '/public/assets/speakers-wanted.png';
+import Image from 'next/image';
+import { EmailIcon } from 'icons';
+
+export const Speakers = () => (
+  <div className="speakers container">
+    <div className="speakers content">
+      <div className="info">
+        <Title text="Speakers wanted" type={TitleType.Big} hasLines />
+        <Subtitle text="If you want to give a talk or conduct a workshop, present your open source project or share a success story, the Rolling Scopes welcomes all kinds of talk proposals." />
+        <Subtitle text="So don't hesitate to drop a short synopsis to RS Head" />
+        <div className="name">Dzmitry Varabei</div>
+        <div className="email">
+          <EmailIcon />
+          <span>rolling.scopes@gmail.com</span>
+        </div>
+      </div>
+      <Image className="right picture" src={image} alt="speakers-wanted" />
+    </div>
+  </div>
+);

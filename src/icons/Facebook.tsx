@@ -1,6 +1,4 @@
-import React from 'react';
-
-export const FacebookIcon: React.FC = () => (
+export const FacebookIcon = () => (
   <svg xmlns="http://www.w3.org/2000/svg" width="57" height="57">
     <rect y="0.0683594" width="56" height="56" rx="28" fill="#EEEEEE" />
     <path
@@ -10,6 +8,7 @@ export const FacebookIcon: React.FC = () => (
       stroke="rgb(0,0,0)"
       strokeLinecap="round"
       strokeLinejoin="round"
-      strokeDasharray=""></path>
+      strokeDasharray=""
+    ></path>
   </svg>
 );

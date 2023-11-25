@@ -1,0 +1,101 @@
+@import './constants';
+@import './mixins';
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter-Bold', 'Inter', sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: $color-secondary-gray600;
+  cursor: pointer;
+}
+
+.container {
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  text-align: left;
+}
+
+.content {
+  width: 1440px;
+  padding: 80px 120px 40px 120px;
+  @include media-laptop {
+    width: 100%;
+    max-width: 1440px;
+    padding: 80px 40px 40px;
+  }
+  @include media-tablet {
+    padding: 40px 16px;
+  }
+}
+
+.column-2 {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  @include media-laptop {
+    flex-direction: column;
+  }
+}
+
+.column-3 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  @include media-laptop {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+// components
+@import 'components/Button/Button';
+@import 'components/EventCard/EventCard';
+@import 'components/Footer/Footer';
+@import 'components/Navbar/Navbar';
+@import 'components/OptionItem/OptionItem';
+@import 'components/Paragraph/Paragraph';
+@import 'components/PrincipleCard/PrincipleCard';
+@import 'components/SectionLabel/SectionLabel';
+@import 'components/SocialMedia/SocialMedia';
+@import 'components/Subtitle/Subtitle';
+@import 'components/Tag/Tag';
+@import 'components/TagDivider/TagDivider';
+@import 'components/Title/Title';
+
+// module/home
+
+//components
+@import 'modules/Home/components/About/About';
+@import 'modules/Home/components/Alumni/Alumni';
+@import 'modules/Home/components/Community/Community';
+@import 'modules/Home/components/Contribute/Contribute';
+@import 'modules/Home/components/Courses/Courses';
+@import 'modules/Home/components/Events/Events';
+@import 'modules/Home/components/Main/Main';
+@import 'modules/Home/components/Merch/Merch';
+@import 'modules/Home/components/Numbers/Numbers';
+@import 'modules/Home/components/Partnered/Partnered';
+@import 'modules/Home/components/Pictures/Pictures';
+@import 'modules/Home/components/Places/Places';
+@import 'modules/Home/components/Principles/Principles';
+@import 'modules/Home/components/School/School';
+@import 'modules/Home/components/Speakers/Speakers';
+@import 'modules/Home/components/Support/Support';
+
+// pages
+@import 'modules/Home/pages/Home/Home';

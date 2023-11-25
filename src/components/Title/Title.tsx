@@ -1,33 +1,26 @@
-import React from 'react';
-
-import './Title.scss';
+import { ReactNode } from 'react';
 
 export enum TitleType {
   Regular = 'regular',
   Big = 'big',
-  ExtraBig = 'extra-big'
-}
-interface TitleProps {
-  text: string;
-  type?: TitleType;
-  hasAsterix?: boolean;
-  hasLines?: boolean;
-  children?: any;
+  ExtraBig = 'extra-big',
 }
 
-export const Title: React.FC<TitleProps> = ({
-  text,
-  type,
-  hasAsterix,
-  hasLines,
-  children
-}: TitleProps) => {
+type TitleProps = {
+  text: string;
+  type?: TitleType;
+  hasAsterisk?: boolean;
+  hasLines?: boolean;
+  children?: ReactNode;
+};
+
+export const Title = ({ text, type, hasAsterisk, hasLines, children }: TitleProps) => {
   const titleType = type ?? TitleType.Regular;
 
   return (
     <div className={`title ${titleType}`}>
       {hasLines && <span className="before">‖</span>}
-      {hasAsterix && <span className="before">*</span>}
+      {hasAsterisk && <span className="before">*</span>}
       <div>
         {text}
         {children}
